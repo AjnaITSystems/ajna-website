@@ -1,0 +1,27 @@
+// Variables
+@import "tema/variables";
+
+// Components
+@import "librerias/normalize";
+@import "librerias/animate";
+
+// base
+@import "base/form";
+@import "base/ul";
+// theme
+@import "tema/body";
+@import "tema/header";
+@import "tema/slider";
+@import "tema/slider-customer";
+@import "tema/footer";
+@import "tema/contact";
+@import "tema/product";
+@import "tema/us";
+@import "tema/service-section";
+
+@import "tema/mobile-menu";
+
+// media
+@import "tema/media";
+
+@import "tema/animate-config";

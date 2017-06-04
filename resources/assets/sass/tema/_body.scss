@@ -1,0 +1,487 @@
+html, * {
+  font-family: 'Poppins', sans-serif;
+  font-size: 12px;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  @include box-sizing(border-box);
+  &:focus {
+    outline: none;
+  }
+  color: $gray;
+}
+
+a {
+  color: $gray;
+  text-decoration: none;
+}
+
+.container-full {
+  width: 100%;
+  @include box-sizing(border-box);
+}
+
+.full-container {
+  width: 100%;
+  overflow: hidden;
+  @include box-sizing(border-box);
+}
+
+.container-gray {
+  background-color: #F7F7F7;
+}
+
+.container {
+  padding: 0 auto;
+  margin: 0 auto;
+  max-width: 1024px;
+  height: auto;
+  @include box-sizing(border-box);
+}
+
+.container-title {
+  text-align: center;
+  padding: 50px 18px 65px 18px;
+  @include box-sizing(border-box);
+  overflow: hidden;
+
+  h2 {
+    padding: 0;
+    margin: 0;
+    font-size: 24px;
+    @include prefixer(text-shadow, 0 5px 34px rgba(44,47,51,0.65));
+    text-transform: uppercase;
+
+    span:nth-child(1) {
+      display: inline-block;
+      width: 14px;
+      height: 14px;
+      background-color: $blue;
+      border-radius: 14px;
+      @include prefixer(box-shadow, 0 5px 28px 0 $blue);
+      margin-top: -10px;
+      margin-right: 14px;
+    }
+
+    span:nth-child(2) {
+      font-size: 24px;
+    }
+  }
+
+  p {
+    padding: 0;
+    margin: 0;
+    margin: 24px 0;
+    font-size: 14px;
+  }
+}
+
+
+// BOTONES GENERICOS
+.btn {
+  color: $white;
+  text-transform: uppercase;
+  font-weight: 500;
+  font-size: 14px;
+  background-color: $gray;
+  padding: 6px 40px;
+  border-radius: 50px;
+  @include transition(.3s ease);
+}
+
+.btn-white {
+  color: $blue;
+  background-color: $white;
+
+  &:hover {
+    // @include prefixer(box-shadow, 0 15px 35px 0 rgba(0,0,0,0.49));
+  }
+}
+
+.btn-blue {
+  color: $white;
+  background-color: $blue;
+
+  &:hover {
+    @include prefixer(box-shadow, 0 5px 28px 0 $blue);
+  }
+}
+
+
+
+// SERVICIOS AJNA
+.service-index-left {
+  margin-left: 15px;
+  float: left;
+  width: 470px;
+  height: 400px;
+  position: relative;
+
+  .slider-service-container {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    cursor: col-resize;
+
+    div {
+      width: 0%;
+      height: 100%;
+      position: absolute;
+      background-size: cover;
+      background-repeat: no-repeat;
+      @include box-sizing(border-box);
+      @include transition(.5s ease);
+      box-shadow: 0 12px 40px 0 rgba(0,0,0,0.25);
+    }
+
+    .slider-service-container-a {
+      width: 30%;
+      top: 0;
+      left: 0;
+      z-index: 1;
+      background-position: left;
+
+      &:hover {
+        width: 100%;
+      }
+
+      &:hover + .slider-service-container-b {
+        width: 0%;
+      }
+    }
+
+    .slider-service-container-b {
+      width: 70%;
+      top: 0;
+      right: 0;
+      z-index: 2;
+      background-position: right;
+
+      &:hover {
+        width: 100%;
+      }
+
+      &:hover + .slider-service-container-b {
+        width: 0%;
+      }
+
+      .slider-row {
+        top: 160px;
+        left: -40px;
+        width: 80px;
+        height: 80px;
+        background-color: $white;
+        border-radius: 160px;
+        background-repeat: no-repeat;
+        background-position: center center;
+        background-size: 60% auto;
+        @include box-sizing(border-box);
+        @include transition(.3s ease);
+        @include prefixer(box-shadow, 0 17px 40px 0 rgba(0,0,0,0.52));
+      }
+    }
+  }
+}
+
+
+
+// SERVICES CONTINER TEXT
+
+.service-index-right {
+  float: right;
+  @include prefixer(width, calc(100% - 485px));
+  height: 500px;
+  @include box-sizing(border-box);
+  position: relative;
+  z-index: 2;
+
+  #service-bar {
+    position: absolute;
+    top: 0;
+    left: 64px;
+    z-index: -1;
+    display: block;
+    width: 3px;
+    height: 85%;
+    background-color: $light-gray-blue;
+  }
+
+  .service-right-item {
+    padding-left: 40px;
+    @include box-sizing(border-box);
+
+    div {
+      float: left;
+      overflow: hidden;
+      @include box-sizing(border-box);
+    }
+
+    .service-number {
+      width: 50px;
+      height: 100%;
+
+      div {
+        width: 50px;
+        height: 50px;
+        background-color: $light-gray-blue;
+        color: $white;
+        border-radius: 50px;
+        font-weight: 700;
+        font-size: 18px;
+        text-align: center;
+        vertical-align: middle;
+        line-height: 56px;
+        @include transition(.5s ease);
+      }
+    }
+
+    .service-desc {
+      height: 100%;
+      padding: 0 20px;
+      @include prefixer(width, calc(100% - 50px));
+
+      a, p {
+        padding: 0;
+        margin: 0;
+        @include transition(.5s ease);
+      }
+
+      a {
+        padding-top: 100px;
+        font-size: 14px;
+        font-weight: 700;
+        text-transform: uppercase;
+      }
+
+      p {
+        margin-top: 4px;
+        margin-bottom: 20px;
+        font-weight: 300;
+        font-size: 13px;
+      }
+    }
+  }
+}
+
+.service-right-item:hover {
+
+  .service-number div {
+    background-color: $black-blue;
+  }
+
+  .service-desc a {
+    color: $blue;
+  }
+}
+
+
+
+
+// NUESTROS PRODUCTOS
+
+.product-item {
+  float: left;
+  @include prefixer(width, calc(33.33% - 30px));
+  height: 84px;
+  margin: 0 15px;
+  margin-bottom: 30px;
+  position: relative;
+  @include transition(.3s ease);
+
+  div {
+    width: 100%;
+    height: 84px;
+    text-align: center;
+    position: absolute;
+    top: 0;
+    left: 0;
+    @include transition(.3s ease);
+  }
+
+  .product-item-green {
+    background: $light-green;
+    z-index: 0;
+    box-shadow: 0 12px 40px 0 rgba(0,0,0,0.25);
+  }
+
+  .product-item-white {
+    background-color: $white;
+    z-index: 2;
+
+    img, h4 {
+      padding: 0;
+      margin: 0;
+      float: left;
+      @include transition(.3s ease);
+    }
+
+    img {
+      height: 80%;
+      width: auto;
+      margin-top: 10px;
+      margin-left: 15px;
+      margin-right: 15px;
+    }
+
+    h4 {
+      padding-top: 28px;
+      font-weight: 700;
+      font-size: 20px;
+      color: $black-blue;
+      text-transform: uppercase;
+    }
+  }
+
+  &:hover {
+
+    position: relative;
+
+    .product-item-green {
+      left: 10%;
+      @include prefixer(transform, scale(1.1));
+      @include prefixer(width, calc(100% - 60px));
+    }
+
+    .product-item-white {
+      margin-top: 7px;
+      height: 70px;
+      @include prefixer(box-shadow, 0 12px 40px 0 rgba(0,0,0,0.25));
+
+      img {
+        margin-top: 8px;
+      }
+
+      h4 {
+        padding-top: 20px;
+      }
+    }
+  }
+}
+
+
+
+// SOBRE NOSOTROS
+
+.container-about-us {
+  height: auto;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+
+  div {
+    padding: 0 auto;
+    margin: 0 auto;
+    max-width: $laptop-l;
+    height: auto;
+    padding: 15px;
+    padding-top: 50px;
+    padding-bottom: 50px;
+    overflow: hidden;
+    @include box-sizing(border-box);
+    @include transition(.3s ease);
+    text-align: center;
+
+    .container-about-us-left {
+      width: 40%;
+      float: left;
+      text-align: left;
+      @include box-sizing(border-box);
+      @include transition(.3s ease);
+
+      h2, p {
+        color: $white;
+
+        span {
+          color: $white;
+        }
+      }
+
+      p:nth-child(3) {
+        margin-bottom: 50px;
+      }
+    }
+
+    .container-about-us-right {
+      width: 60%;
+      float: left;
+      @include box-sizing(border-box);
+      @include transition(.3s ease);
+      text-align: center;
+
+      img {
+        width: 50%;
+        max-width: 269px;
+        height: auto;
+        margin-top: 30px;
+      }
+    }
+  }
+}
+
+
+
+
+// TITLE SECTION FOR ALL
+.container-title-section {
+  height: auto;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+
+  div {
+    padding: 0 auto;
+    margin: 0 auto;
+    max-width: $laptop-l;
+    height: auto;
+    padding: 15px;
+    padding-top: 0px;
+    padding-bottom: 0px;
+    overflow: hidden;
+    @include box-sizing(border-box);
+    @include transition(.3s ease);
+    text-align: center;
+
+    .container-title-section-left {
+      width: 40%;
+      float: left;
+      text-align: left;
+      @include box-sizing(border-box);
+      @include transition(.3s ease);
+
+      h2 {
+        margin-top: 40px;
+      }
+
+      h2, p {
+        color: $white;
+
+        span {
+          color: $white;
+        }
+      }
+
+      p:nth-child(3) {
+        margin-bottom: 50px;
+      }
+    }
+
+    .container-title-section-right {
+      width: 60%;
+      float: left;
+      @include box-sizing(border-box);
+      @include transition(.3s ease);
+      text-align: center;
+
+      img {
+        width: 100%;
+        max-width: 459px;
+        height: auto;
+        margin-top: 20px;
+        margin-bottom: 20px;
+      }
+    }
+  }
+}
+

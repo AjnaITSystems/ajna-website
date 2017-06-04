@@ -1,0 +1,429 @@
+@media screen and  (max-width: 1200px) {
+}
+
+
+@media screen and  (max-width: 900px) {
+
+  // HEADER MENU INFO
+  #right-menu {
+    .right-menu-item:nth-child(1){
+      margin-left: 0;
+      margin-right: 20px;
+    }
+
+    .right-menu-item:nth-child(2){
+      margin-left: 0;
+      margin-right: 20px;
+    }
+  }
+
+  .product-item {
+    .product-item-white {
+      h4 {
+        font-size: 16px;
+      }
+    }
+  }
+}
+
+
+@media screen and  (max-width: 860px) {
+  .footer-section {
+    width: 30% !important;
+  }
+
+  .footer-section:nth-child(2) {
+    width: 40% !important;
+  }
+}
+
+@media screen and  (max-width: 840px) {
+
+  // HEADER MENU INFO
+  #right-menu {
+    .right-menu-item {
+      a {
+        img {
+          display: none;
+        }
+      }
+    }
+  }
+}
+
+
+
+
+
+
+@media screen and  (max-width: 816px) {
+  .service-index-left {
+    width: 100%;
+    height: 375px !important;
+    margin: 0;
+  }
+
+  .service-index-right {
+    padding-top: 40px;
+    padding-bottom: 20px;
+    width: 100%;
+    height: auto !important;
+
+    #service-bar {
+      height: 100%;
+    }
+  }
+}
+
+
+
+
+@media screen and  (max-width: 800px) {
+}
+
+
+
+
+
+
+@media screen and  (max-width: 766px) {
+
+  // SLIDER CLIENTES
+  .slider-customer {
+    padding-top: 10px;
+    .customer-item {
+      @include prefixer(width, calc(50% - 24px));
+      a {
+        img {
+          width: 50%;
+        }
+      }
+    }
+  }
+
+  // SLIDER
+  .slider-info {
+    padding: 0 17px;
+  }
+
+  // NUESTROS PRODUCTOS
+  .product-item {
+    @include prefixer(width, calc(100%));
+
+    div {
+      @include prefixer(width, calc(100% - 30px));
+    }
+
+    .product-item-white {
+      h4 {
+        font-size: 18px;
+      }
+    }
+
+    &:hover {
+      .product-item-green {
+        @include prefixer(width, calc(100% - 30%));
+      }
+    }
+  }
+
+  // SOBRE NOSOTROS
+  .container-about-us {
+    div {
+      .container-about-us-left {
+        width: 60%;
+      }
+
+      .container-about-us-right {
+        width: 40%;
+        img {
+          width: 80%;
+        }
+      }
+    }
+  }
+}
+
+
+
+@media screen and (max-width: 750px) {
+  #info-contact-container {
+    margin-top: 20px;
+  }
+  #contact-container, #info-contact-container {
+    padding: 20px;
+  }
+}
+
+
+
+@media screen and (max-width: 740px) {
+
+  body {
+    padding-top: 56px;
+  }
+
+  .btn-menu {
+    display: inherit !important;
+  }
+
+  // HEADER MENU
+  header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 209;
+    height: 56px;
+    overflow: hidden;
+    border-bottom: solid 1px $light-gray;
+
+    .header-container {
+      #logo {
+        padding-top: 0;
+
+        img {
+          margin: 8px 0 0 5px !important;
+          height: 40px;
+          width: auto;
+        }
+      }
+    }
+
+    .header-container:nth-child(2) {
+      display: none;
+    }
+  }
+
+  #right-menu {
+    display: none;
+  }
+
+
+  // TITLE SECTION
+  .container-title-section {
+    div {
+      .container-title-section-left {
+        text-align: center;
+        width: 100%;
+      }
+
+      .container-title-section-right {
+        width: 100%;
+
+        img {
+          margin-top: 0;
+        }
+      }
+    }
+  }
+
+
+  /// SECTION - NOSTROS VALORES
+  .title-us {
+    width: 150px;
+  }
+  .info-us {
+    @include prefixer(width, calc(100% - 150px));
+  }
+
+
+  // SECTION - SERVICIOS
+  .section-service-desc, .section-service-img {
+    width: 100%;
+  }
+}
+
+
+@media screen and (max-width: 730px) {
+
+  .footer-section {
+    margin-bottom: 50px;
+
+    .footer-title {
+      padding: 0 !important;
+      margin: 0 !important;
+    }
+  }
+
+  .footer-section:nth-child(1) {
+    text-align: center;
+    width: 100% !important;
+  }
+
+  .footer-section:nth-child(2) {
+    width: 100% !important;
+
+    .footer-menu-information {
+      .right-menu-item {
+        display: block;
+        float: inherit !important;
+        overflow: hidden;
+        padding: 10px 0;
+      }
+    }
+  }
+
+  .footer-section:nth-child(3) {
+    width: 100% !important;
+    padding-bottom: 0;
+    margin-bottom: 20px;
+
+    .footer-menu-information {
+      .right-menu-item {
+        margin-top: 20px;
+        .social-network {
+          width: 46px;
+          height: 46px;
+        }
+      }
+    }
+  }
+}
+
+
+
+
+@media screen and (max-width: 670px) {
+
+  // SLIDER
+  .slider-info {
+    padding-top: 20px;
+
+    h2 {
+      font-size: 28px;
+      margin-bottom: 20px;
+    }
+
+    p {
+      font-size: 14px;
+    }
+  }
+
+  // SOBRE NOSOTROS
+  .container-about-us {
+
+    div {
+      padding: 70px 10px;
+
+      .container-about-us-left {
+        width: 100%;
+        float: right;
+        text-align: center;
+        padding: 0;
+        padding-bottom: 30px;
+
+        p:nth-child(3) {
+          margin-bottom: 45px;
+        }
+      }
+
+      .container-about-us-right {
+        width: 100%;
+        float: right;
+        text-align: center;
+        padding: 40px 0 0 0;
+
+        img {
+          width: 80%;
+          max-width: 269px;
+          height: auto;
+          margin-top: 0px;
+          padding: 0px;
+        }
+      }
+    }
+  }
+
+
+  // INFO CONTACT WITH 100
+  #info-contact-container {
+    margin-top: 20px;
+    text-align: center;
+  }
+
+  #contact-container, #info-contact-container {
+    padding: 0 16px 0 16px;
+    width: 100% !important;
+  }
+}
+
+
+
+@media screen and  (max-width: 590px) {
+}
+
+@media screen and  (max-width: 500px) {
+  /// NOSTROS VALORES
+  .title-us, .info-us {
+    margin: 0;
+    padding: 0 16px;
+    width: 100%;
+    min-height: 80px;
+    text-align: center;
+  }
+
+  .title-us {
+    padding-top: 30px;
+    padding-bottom: 14px;
+  }
+
+  .info-us {
+    h4 {
+      padding: 28px 16px 10px 16px;
+    }
+  }
+}
+
+@media screen and (max-width: 420px) {
+  .container-title {
+    h2 {
+      span:nth-child(2) {
+        display: none;
+      }
+    }
+  }
+}
+
+
+
+
+@media screen and  (max-width: 375px) {
+
+  // SLIDER CLIENTES
+  .slider-customer {
+    .customer-item {
+      height: 140px;
+
+      a {
+        img {
+          width: 75%;
+        }
+
+        h2 {
+          display: none;
+        }
+
+        h3 {
+          margin-top: 16px;
+        }
+      }
+    }
+  }
+}
+
+
+@media screen and  (max-width: 374px) {
+  // SLIDER
+  .slider-btn {
+    margin: 0px;
+    font-size: 14px;
+    font-weight: 500;
+    padding: 8px 18px !important;
+  }
+}
+
+
+
+@media screen and  (max-width: 320px) {
+
+}

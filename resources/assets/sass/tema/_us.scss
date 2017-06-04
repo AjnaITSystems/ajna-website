@@ -1,0 +1,51 @@
+.title-us, .info-us {
+  @include box-sizing(border-box);
+  @include transition(.3s ease);
+  float: left;
+  min-height: 120px;
+
+  h1 {
+    padding: 0;
+    margin: 0;
+    text-transform: uppercase;
+    color: $black-blue;
+    font-size: 24px;
+  }
+
+  p {
+    margin: 0;
+    padding: 0;
+    color: $blue;
+  }
+
+  div {
+    p {
+      font-size: 13px;
+      color: $black-blue;
+
+      &:last-child {
+        padding-bottom: 40px;
+      }
+    }
+  }
+}
+
+
+.title-us {
+  padding: 30px 16px 16px 16px;
+  width: 200px;
+  height: auto;
+}
+
+.info-us {
+  padding: 30px 16px 16px 16px;
+  @include prefixer(width, calc(100% - 200px));
+  height: auto;
+
+  h4 {
+    padding: 20px 0;
+    margin: 0;
+    text-transform: uppercase;
+    font-size: 14px;
+  }
+}

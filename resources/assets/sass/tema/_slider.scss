@@ -1,0 +1,115 @@
+section {
+  margin: 0 auto;
+  max-width: 100%;
+}
+
+.slider-ajna {
+  div {
+    width: 100%;
+    height: 540px;
+    overflow: hidden;
+  }
+}
+
+.slider-section {
+  position: relative;
+  @include prefixer(background-size, cover);
+}
+
+.slider-bg {
+  @include transition(.3s ease);
+  width: 100%;
+  height: 100%;
+  background-color: rgba(#303741, .53);
+
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 10;
+}
+
+
+.slider-info {
+  position: relative;
+  z-index: 11;
+  padding: 0 auto;
+  margin: 0 auto;
+  max-width: 688px;
+  text-align: center;
+
+  h2 {
+    padding: 0;
+    margin: 0;
+    margin-top: 80px;
+    margin-bottom: 20px;
+    text-align: center;
+    font-size: 46px;
+    font-weight: 500;
+    color: $white;
+    text-shadow: 0 4px 38px rgba(0,0,0,0.60);
+    text-transform: uppercase;
+  }
+
+  p {
+    padding: 0;
+    margin: 0;
+    margin-bottom: 60px;
+    color: $white;
+    font-weight: 500;
+    font-size: 20px;
+    text-align: center;
+    text-shadow: 0 2px 26px rgba(0,0,0,0.40);
+  }
+
+  .slider-btn {
+    margin: 10px;
+    color: $white;
+    text-transform: uppercase;
+    font-weight: 500;
+    font-size: 16px;
+    background-color: $gray;
+    padding: 8px 30px;
+    border-radius: 50px;
+    @include transition(.3s ease);
+  }
+
+  .slider-btn-white {
+    color: $blue;
+    background-color: $white;
+    @include prefixer(box-shadow, 0 5px 35px 0 rgba(0,0,0,0.35));
+
+    &:hover {
+      @include prefixer(box-shadow, 0 15px 35px 0 rgba(0,0,0,0.30));
+    }
+  }
+
+  .slider-btn-blue {
+    color: $white;
+    background-color: $blue;
+    @include prefixer(box-shadow, 0 5px 28px 0 rgba(#233042, .8));
+
+    &:hover {
+      @include prefixer(box-shadow, 0 15px 35px 0 rgba(#233042, .4));
+    }
+  }
+}
+
+
+/**
+	CUSTOMERS SLIDER
+**/
+
+.slider-customer {
+
+  .slick-slide {
+    width: 20%;
+    margin: 10px;
+    padding: 20px;
+    @include box-sizing(border-box);
+    @include transition(.3s ease);
+
+    &:hover {
+      box-shadow: 0px 2px 37px 0px rgba(0,0,0,0.17);
+    }
+  }
+}
