@@ -1,5 +1,6 @@
 <?php
 $title = "AJNA IT Systems | Conocenos | Nosotros | AJNA IT Systems, es una empresa dedicada a resolver problemas de negocios, ayudando a mejorar la competitividad.";
+$langUrl = "us.php";
 include 'header.php';
 ?>
 <section class="full-container container-title-section" style="background-image: url('public/media/bg/about-us.png')">

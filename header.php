@@ -43,12 +43,26 @@ include_once 'common.php';
     <div class="mobil-menu-container">
         <input type="text" class="input-search" name="search" style="background-image: url('public/media/icon/search.png')">
         <a href="contact.php" class="btn-mobil-contact">Contacto</a>
-        <form action="#">
-            <select class="select-languaje">
-                <option value="es">es</option>
-                <option value="en">en</option>
+        <form action="index.php" method="post">
+            <select id="lang-mobile" name="lang" class="select-languaje">
+                <?php
+
+                switch ($_SESSION['select-state']) {
+                    case 'en':
+                        echo '<option value="es">es</option><option value="en" selected>en</option>';
+                        break;
+
+                    case 'es':
+                        echo '<option value="es" selected>es</option><option value="en">en</option>';
+                        break;
+
+                    default:
+                        echo '<option value="es" selected>es</option><option value="en">en</option>';
+                }
+                ?>
             </select>
         </form>
+
         <div class="mobil-menu-container-list">
             <a href="index.php"><span></span>Inicio</a>
             <a href="services.php"><span></span>Servicios</a>
@@ -162,10 +176,23 @@ include_once 'common.php';
                         <a href="contact.php"><?php echo $lang['MENU_CONTACT_US']; ?></a>
                     </li>
                     <li>
-                        <form action="index.php" method="get">
+                        <form action="<?php echo $langUrl;?>" method="post">
                             <select id="lang" name="lang" class="select-languaje">
-                                <option value="es">es</option>
-                                <option value="en">en</option>
+                                <?php
+
+                                switch ($_SESSION['select-state']) {
+                                    case 'en':
+                                        echo '<option value="es">es</option><option value="en" selected>en</option>';
+                                        break;
+
+                                    case 'es':
+                                        echo '<option value="es" selected>es</option><option value="en">en</option>';
+                                        break;
+
+                                    default:
+                                        echo '<option value="es" selected>es</option><option value="en">en</option>';
+                                }
+                                ?>
                             </select>
                         </form>
                     </li>

@@ -1,5 +1,6 @@
 <?php
 $title = "AJNA IT Systems | Servicios de Consultor&iacute;a | Business Intelligence | Somos data freaks expertos en data discovery y analytics. | Desarrollo de Software | Staffing | Qlik | Qlik View | Qlik Sense";
+$langUrl = "index.php";
 include 'header.php';
 ?>
 
@@ -12,7 +13,7 @@ include 'header.php';
                     </div>
 
                     <div class="slider-info">
-                        <h2>Business Inteligence</h2>
+                        <h2>Business Intelligence</h2>
                         <p>Somos data freaks expertos en data discovery y analytics.</p>
                         <a href="http://www.ajna.com.mx/services.php#business-intelligence" class="slider-btn slider-btn-white">Leer más</a>
                         <a href="contact.php#contact-container" class="slider-btn slider-btn-blue">Contacto</a>
@@ -129,7 +130,7 @@ include 'header.php';
                     </div>
                     <div class="service-desc">
                         <a href="http://www.ajna.com.mx/services.php#business-intelligence">Business Intelligence</a>
-                        <p>Transforma los datos en información valiosa para la toma de decisiones, reduciendo costos y optimizando procesos.</p>
+                        <p><a href="http://www.ajna.com.mx/services.php#business-intelligence">Transforma los datos en información valiosa para la toma de decisiones, reduciendo costos y optimizando procesos.</a></p>
                     </div>
                 </div>
                 <div class="service-right-item">
@@ -138,7 +139,7 @@ include 'header.php';
                     </div>
                     <div class="service-desc">
                         <a href="http://www.ajna.com.mx/services.php#software-development">Desarrollo de software</a>
-                        <p>Desarrollamos Software empresarial a la medida, como son aplicaciones de escritorio, web, mobile, etc.</p>
+                        <p><a href="http://www.ajna.com.mx/services.php#software-development">Desarrollamos Software empresarial a la medida, como son aplicaciones de escritorio, web, mobile, etc.</a></p>
                     </div>
                 </div>
                 <!--
@@ -158,7 +159,7 @@ include 'header.php';
                     </div>
                     <div class="service-desc">
                         <a href="http://www.ajna.com.mx/services.php#outsourcing">Outsourcing / Staffing</a>
-                        <p>Cuenta con nosotros para mejorar tu fuerza laboral y aumenta tu productividad.</p>
+                        <p><a href="http://www.ajna.com.mx/services.php#outsourcing">Cuenta con nosotros para mejorar tu fuerza laboral y aumenta tu productividad.</a></p>
                     </div>
                 </div>
             </div>
@@ -201,7 +202,7 @@ include 'header.php';
         <div>
             <div class="container-title container-about-us-left">
                 <h2><span></span><span>Sobre</span> nosotros</h2>
-                <p>AJNA, es una empresa dedicada a resolver problemas de negocios, ayudando a elevar la competitividad..</p>
+                <p>AJNA, es una empresa dedicada a resolver problemas de negocios, ayudando a elevar la competitividad.</p>
                 <p>Brindando herramientas para una mejor toma de decisiones, con los más altos estándares de calidad.</p>
                 <a href="us.php" class="btn btn-blue">Leer más</a>
             </div>

@@ -123,9 +123,9 @@ class Mail{
         if ($nombre != '' && $email != '' && $mensaje != '') {
             mail($dest, $asunto, $cuerpo, $headers); //ENVIAR A USUARIO A!
             // mail($dest2,$asunto,$cuerpo,$headers);
-            echo '<div class="error-contact success"><div>Cerrar</div><ul><li>¡Correo enviado correctamente!</li></ul></div>';
+            echo '<div class="error-contact success"><div>Cerrar</div><ul><li>Mensaje:</li><li>¡Correo enviado correctamente!</li></ul></div>';
         } else {
-            echo '<div class="error-contact"><div>Cerrar</div><ul><li>Algo salio mal, por favor intentalo más tarde.</li></ul></div>';
+            echo '<div class="error-contact"><div>Cerrar</div><ul><li>Mensaje:</li><li>Algo salio mal, por favor intentalo más tarde.</li></ul></div>';
         }
     }
 }

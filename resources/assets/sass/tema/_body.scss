@@ -258,8 +258,12 @@ a {
       p {
         margin-top: 4px;
         margin-bottom: 20px;
-        font-weight: 300;
-        font-size: 13px;
+
+        a {
+          font-weight: 300 !important;
+          font-size: 13px !important;
+          text-transform: capitalize;
+        }
       }
     }
   }

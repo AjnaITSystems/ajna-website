@@ -52,7 +52,7 @@
         },
 
         ChangeLanguage: function () {
-            $('#lang').on('change', function() {
+            $("#lang, #lang-mobile").on("change", function() {
                 this.form.submit();
             });
         }

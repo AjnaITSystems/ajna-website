@@ -35,11 +35,13 @@ header {
   .right-menu-item:nth-child(1){
     margin-left: 20px;
     margin-right: 20px;
+    @include box-sizing(border-box);
   }
 
   .right-menu-item:nth-child(2){
     margin-left: 20px;
     margin-right: 40px;
+    @include box-sizing(border-box);
   }
 
   .right-menu-item {
@@ -51,11 +53,13 @@ header {
     font-weight: 600;
     font-size: 12px;
 
-
     a {
+      @include box-sizing(border-box);
+
       img {
         float: left;
         margin-right: 16px;
+        @include box-sizing(border-box);
       }
       ul {
         @include box-sizing(border-box);
@@ -68,6 +72,7 @@ header {
           padding: 0;
           margin: 0;
           list-style: none;
+          width: 172px;
         }
       }
     }

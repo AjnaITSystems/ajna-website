@@ -1,9 +1,12 @@
 <?php
 $title = "AJNA IT Systems | Contactános | Contacto | Contáctanos ingresando tus datos en el formulario de contacto. Responderemos todas tus dudas lo antes posible.";
+$langUrl = "contact.php";
+
 include "header.php";
 use ReCaptcha\ReCaptcha;
 require 'vendor/autoload.php';
 $recaptcha = new ReCaptcha('6Lf3JyQUAAAAALMzzfsWgUerrfFhuQcKS6YKXPAo');
+
 include "Mail.php";
 ?>
 <section class="full-container container-title-section" style="background-image: url('public/media/bg/about-us.png')">
@@ -62,7 +65,7 @@ include "Mail.php";
 
                     function getInfoMessage() {
 
-                        if (isset($_POST, $_POST['txtnom'], $_POST['txtmail'], $_POST['txttel'], $_POST['txtmail'], $_POST['txtobs'], $_POST['txtcaptcha']))
+                        if (isset($_POST, $_POST['txtnom'], $_POST['txtmail'], $_POST['txttel'], $_POST['txtmail'], $_POST['txtobs']))
                         {
                             if ($_POST["txtnom"] == "" || empty($_POST["txtnom"]))
                                 $message[] = "Por favor ingresa tu nombre";
@@ -78,18 +81,22 @@ include "Mail.php";
 
                             return $message;
                         } else {
-                            $message[] = "Todos los campos son requeridos:";
+                            $message[] = "Todos los campos son obligatorios:";
                             return $message;
                         }
                     }
 
                     $errors = getInfoMessage();
 
+                    if (!$reponse->isSuccess()) {
+                        $message[] = "Por favor valida el Captcha";
+                    }
+
                     if ($reponse->isSuccess() && count($errors) == 0) {
                         $mail = new Mail();
                         $mail->sentMail($_POST["txtnom"], $_POST["txtobs"], $_POST["txtmail"], $_POST["txttel"]);
                     } else {
-                        echo '<div class="error-contact"><ul><div>Cerrar</div><li>Revisa los siguientes campos:</li>';
+                        echo '<div class="error-contact"><ul><div>Cerrar</div><li>Respuesta:</li>';
                         foreach ($errors as $message) {
                             echo "<li>$message</li>";
                         }

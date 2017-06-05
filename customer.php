@@ -1,5 +1,6 @@
 <?php
 $title = "AJNA IT Systems | Clientes | PROSA | Promoción y Operación SA de CV | Jose Cuervo | IRIUM | Azteca ";
+$langUrl = "customer.php";
 include 'header.php';
 ?>
 <section class="full-container container-title-section" style="background-image: url('public/media/bg/about-us.png')">
@@ -19,7 +20,7 @@ include 'header.php';
         <a href="https://portal.prosa.com.mx" target="_blank">
             <img src="public/media/customer/customer-1.png" alt="PROSA">
             <h2>Prosa</h2>
-            <h3>Core bacario</h3>
+            <h3>Core bancario</h3>
         </a>
     </div>
     <div class="customer-item customer-item-black">

@@ -1,5 +1,6 @@
 <?php
 $title = "AJNA IT Systems | Productos | Qlik | Qlik View | Qlik Sense | Sense Cloud | NPrinting";
+$langUrl = "products.php";
 include 'header.php';
 ?>
 <section class="full-container container-title-section" style="background-image: url('public/media/bg/about-us.png')">
