@@ -1,3 +1,6 @@
+<?php
+include_once 'common.php';
+?>
 <!DOCTYPE html>
 <html>
 <head>
@@ -134,19 +137,19 @@
             <nav>
                 <ul>
                     <li>
-                        <a href="index.php" style="background-image: url('public/media/icon/item-bar.png')">Inicio</a>
+                        <a href="index.php" style="background-image: url('public/media/icon/item-bar.png')"><?php echo $lang['MENU_HOME']; ?></a>
                     </li>
                     <li>
-                        <a href="services.php" style="background-image: url('public/media/icon/item-bar.png')">Servicios</a>
+                        <a href="services.php" style="background-image: url('public/media/icon/item-bar.png')"><?php echo $lang['MENU_SERVICE']; ?></a>
                     </li>
                     <li>
-                        <a href="products.php" style="background-image: url('public/media/icon/item-bar.png')">Productos</a>
+                        <a href="products.php" style="background-image: url('public/media/icon/item-bar.png')"><?php echo $lang['MENU_PRODUCT']; ?></a>
                     </li>
                     <li>
-                        <a href="customer.php" style="background-image: url('public/media/icon/item-bar.png')">Clientes</a>
+                        <a href="customer.php" style="background-image: url('public/media/icon/item-bar.png')"><?php echo $lang['MENU_CUSTOMER']; ?></a>
                     </li>
                     <li>
-                        <a href="us.php" style="background-image: url('public/media/icon/item-bar.png')">Nosotros</a>
+                        <a href="us.php" style="background-image: url('public/media/icon/item-bar.png')"><?php echo $lang['MENU_ABOUT_US']; ?></a>
                     </li>
                 </ul>
 
@@ -156,11 +159,11 @@
                         </div>
                     </li>
                     <li>
-                        <a href="contact.php">Contacto</a>
+                        <a href="contact.php"><?php echo $lang['MENU_CONTACT_US']; ?></a>
                     </li>
                     <li>
-                        <form action="#">
-                            <select class="select-languaje">
+                        <form action="index.php" method="get">
+                            <select id="lang" name="lang" class="select-languaje">
                                 <option value="es">es</option>
                                 <option value="en">en</option>
                             </select>

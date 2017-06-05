@@ -1,10 +1,11 @@
 <?php
 $title = "AJNA IT Systems | Contactános | Contacto | Contáctanos ingresando tus datos en el formulario de contacto. Responderemos todas tus dudas lo antes posible.";
-include 'header.php';
-include 'ContactController.php'
+include "header.php";
+use ReCaptcha\ReCaptcha;
+require 'vendor/autoload.php';
+$recaptcha = new ReCaptcha('6Lf3JyQUAAAAALMzzfsWgUerrfFhuQcKS6YKXPAo');
+include "Mail.php";
 ?>
-
-
 <section class="full-container container-title-section" style="background-image: url('public/media/bg/about-us.png')">
     <div>
         <div class="container-title container-title-section-left">
@@ -50,48 +51,77 @@ include 'ContactController.php'
 
         <div id="contact-container">
                 <h1>Ingresa tus datos</h1>
-                <p>Nos pondremos en contacto</p>
+                <p>Todos los campos son obligatorios.</p>
 
                 <?php
-                    $result = new ContactController();
-                    $errors = $result->getInfoMessage();
 
-                    if ( count($errors) > 0) {
-                        echo '<div class="error-contact"><ul><div>Cerrar</div><li>Por favor revisa los siguientes campos:</li>';
+                if (isset($_POST['g-recaptcha-response'])) {
+
+                    $reponse = $recaptcha->verify($_POST['g-recaptcha-response']);
+                    $message = array();
+
+                    function getInfoMessage() {
+
+                        if (isset($_POST, $_POST['txtnom'], $_POST['txtmail'], $_POST['txttel'], $_POST['txtmail'], $_POST['txtobs'], $_POST['txtcaptcha']))
+                        {
+                            if ($_POST["txtnom"] == "" || empty($_POST["txtnom"]))
+                                $message[] = "Por favor ingresa tu nombre";
+
+                            if ($_POST["txttel"] == "" || empty($_POST["txttel"]))
+                                $message[] = "Por favor ingresa tu teléfono";
+
+                            if ($_POST["txtmail"] == "" || empty($_POST["txtmail"]))
+                                $message[] = "Por favor ingresa tu correo electrónico";
+
+                            if ($_POST["txtobs"] == "" || empty($_POST["txtobs"]))
+                                $message[] = "Por favor ingresa tu comentario";
+
+                            return $message;
+                        } else {
+                            $message[] = "Todos los campos son requeridos:";
+                            return $message;
+                        }
+                    }
+
+                    $errors = getInfoMessage();
+
+                    if ($reponse->isSuccess() && count($errors) == 0) {
+                        $mail = new Mail();
+                        $mail->sentMail($_POST["txtnom"], $_POST["txtobs"], $_POST["txtmail"], $_POST["txttel"]);
+                    } else {
+                        echo '<div class="error-contact"><ul><div>Cerrar</div><li>Revisa los siguientes campos:</li>';
                         foreach ($errors as $message) {
                             echo "<li>$message</li>";
                         }
                         echo "</ul></div>";
                     }
-
-                    if (count($errors) == 0 && isset($_POST , $_POST['txtnom'], $_POST['txtmail'], $_POST['txtobs'], $_POST['txttel'])) {
-                        include('mail.php');
-                    }
+                }
                 ?>
 
                 <form method="post" action="contact.php" name="frmcontacto">
 
                     <label for="txtnom">Nombre</label>
-                    <input type="text" name="txtnom" id="txtnom" placeholder="Nombre" value="<?php echo isset($_POST['txtnom']) ? $_POST['txtnom'] : ''; ?>" required />
+                    <input type="text" name="txtnom" id="txtnom" placeholder="Nombre" value="<?php echo isset($_POST['txtnom']) ? $_POST['txtnom'] : ''; ?>" />
 
                     <label for="txtmail">E-mail</label>
-                    <input type="email" name="txtmail" id="txtmail" placeholder="Correo" value="<?php echo isset($_POST['txtmail']) ? $_POST['txtmail'] : ''; ?>" required />
+                    <input type="email" name="txtmail" id="txtmail" placeholder="Correo" value="<?php echo isset($_POST['txtmail']) ? $_POST['txtmail'] : ''; ?>" />
 
                     <label for="txttel">Teléfono</label>
-                    <input type="number" name="txttel" id="txttel" placeholder="Teléfono" value="<?php echo isset($_POST['txttel']) ? $_POST['txttel'] : ''; ?>" required />
+                    <input type="number" name="txttel" id="txttel" placeholder="Teléfono" value="<?php echo isset($_POST['txttel']) ? $_POST['txttel'] : ''; ?>" />
 
                     <label for="txtobs">Comentario</label>
-                    <textarea name="txtobs" id="txtobs" placeholder="Sus comentarios son de gran importancia para nosotros" required><?php echo isset($_POST['txtobs']) ? $_POST['txtobs'] : ''; ?></textarea>
+                    <textarea name="txtobs" id="txtobs" placeholder="Sus comentarios son de gran importancia para nosotros" ><?php echo isset($_POST['txtobs']) ? $_POST['txtobs'] : ''; ?></textarea>
 
-                    <label for="txtcaptcha">Código</label>
+                    <label for="txtcaptcha">Captcha</label>
+                    <!--
                     <input type="text" name="txtcaptcha" id="txtcaptcha" placeholder="Código de seguridad" required/>
-                    <div id="captcha-container"><img src="captcha.php"></div>
+                    <div id="captcha-container"><img src="captcha.php"></div>-->
+
+                    <div class="g-recaptcha" data-sitekey="6Lf3JyQUAAAAAFv_UZxZgDpqtQ2KRRDMzX5W7sUT"></div>
 
                     <input type="submit" value="Enviar"/>
-
                 </form>
             </div>
-
     </article>
 </div>
 </section>
@@ -190,6 +220,6 @@ include 'ContactController.php'
         });
     }
 </script>
+<script src='https://www.google.com/recaptcha/api.js'></script>
 <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyASGLG_X33TnTSWT_ynl3qKkTX2YhrVSeI&callback=initMap" async defer></script>
-
 <?php include 'footer.php';?>

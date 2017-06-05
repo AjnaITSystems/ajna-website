@@ -15,7 +15,7 @@ include 'header.php';
                         <h2>Business Inteligence</h2>
                         <p>Somos data freaks expertos en data discovery y analytics.</p>
                         <a href="http://www.ajna.com.mx/services.php#business-intelligence" class="slider-btn slider-btn-white">Leer más</a>
-                        <a href="contact.php" class="slider-btn slider-btn-blue">Contacto</a>
+                        <a href="contact.php#contact-container" class="slider-btn slider-btn-blue">Contacto</a>
                     </div>
                 </div>
             </a>
@@ -32,7 +32,7 @@ include 'header.php';
                         <h2>Desarrollo de aplicaciones</h2>
                         <p>&#60;Somos especialistas en desarrollo de aplicaciones&#62;</p>
                         <a href="http://www.ajna.com.mx/services.php#software-development" class="slider-btn slider-btn-white">Leer más</a>
-                        <a href="contact.php" class="slider-btn slider-btn-blue">Contacto</a>
+                        <a href="contact.php#contact-container" class="slider-btn slider-btn-blue">Contacto</a>
                     </div>
                 </div>
             </a>
@@ -48,7 +48,7 @@ include 'header.php';
                         <h2>Staffing</h2>
                         <p>Te ayudamos a cubrir necesidades de personal.</p>
                         <a href="http://www.ajna.com.mx/services.php#outsourcing" class="slider-btn slider-btn-white">Leer más</a>
-                        <a href="contact.php" class="slider-btn slider-btn-blue">Contacto</a>
+                        <a href="contact.php#contact-container" class="slider-btn slider-btn-blue">Contacto</a>
                     </div>
                 </div>
             </a>
@@ -64,7 +64,7 @@ include 'header.php';
                         <h2>Qlik view</h2>
                         <p>Damos soluciones de análisis de datos.</p>
                         <a href="products.php" class="slider-btn slider-btn-white">Leer más</a>
-                        <a href="contact.php" class="slider-btn slider-btn-blue">Contacto</a>
+                        <a href="contact.php#contact-container" class="slider-btn slider-btn-blue">Contacto</a>
                     </div>
                 </div>
             </a>

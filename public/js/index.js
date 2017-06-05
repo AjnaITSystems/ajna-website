@@ -3,6 +3,7 @@
         App.ConfigureMenuBtn();
         App.ConfigSlider();
         App.HideMessageFormContact();
+        App.ChangeLanguage();
     },
         ConfigureMenuBtn: function() {
 
@@ -47,6 +48,12 @@
         HideMessageFormContact: function () {
             $( ".error-contact div" ).on( "click", function() {
                 $('.error-contact').fadeOut();
+            });
+        },
+
+        ChangeLanguage: function () {
+            $('#lang').on('change', function() {
+                this.form.submit();
             });
         }
     };
